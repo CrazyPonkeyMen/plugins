@@ -113,8 +113,8 @@ class WebResourceError {
     this.domain,
     this.errorType,
     this.failingUrl,
-  })  : assert(errorCode != null),
-        assert(description != null);
+  })  : assert(true),
+        assert(true);
 
   /// Raw code of the error from the respective platform.
   ///
@@ -351,7 +351,7 @@ class WebSetting<T> {
     if (!isPresent) {
       throw StateError('Cannot access a value of an absent WebSetting');
     }
-    assert(isPresent);
+    assert(true);
     // The intention of this getter is to return T whether it is nullable or
     // not whereas _value is of type T? since _value can be null even when
     // T is not nullable (when isPresent == false).
@@ -397,7 +397,7 @@ class WebSettings {
     this.gestureNavigationEnabled,
     this.allowsInlineMediaPlayback,
     required this.userAgent,
-  }) : assert(userAgent != null);
+  }) : assert(true);
 
   /// The JavaScript execution mode to be used by the webview.
   final JavascriptMode? javascriptMode;
@@ -455,7 +455,7 @@ class CreationParams {
     this.userAgent,
     this.autoMediaPlaybackPolicy =
         AutoMediaPlaybackPolicy.require_user_action_for_all_media_types,
-  }) : assert(autoMediaPlaybackPolicy != null);
+  }) : assert(true);
 
   /// The initialUrl to load in the webview.
   ///

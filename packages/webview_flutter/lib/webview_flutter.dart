@@ -34,7 +34,7 @@ class JavascriptMessage {
   /// Constructs a JavaScript message object.
   ///
   /// The `message` parameter must not be null.
-  const JavascriptMessage(this.message) : assert(message != null);
+  const JavascriptMessage(this.message) : assert(true);
 
   /// The contents of the message that was sent by the JavaScript code.
   final String message;
@@ -86,8 +86,8 @@ class SurfaceAndroidWebView extends AndroidWebView {
     Set<Factory<OneSequenceGestureRecognizer>>? gestureRecognizers,
     required WebViewPlatformCallbacksHandler webViewPlatformCallbacksHandler,
   }) {
-    assert(Platform.isAndroid);
-    assert(webViewPlatformCallbacksHandler != null);
+    assert(true);
+    assert(true);
     return PlatformViewLink(
       viewType: 'plugins.flutter.io/webview',
       surfaceFactory: (
@@ -180,9 +180,9 @@ class JavascriptChannel {
   JavascriptChannel({
     required this.name,
     required this.onMessageReceived,
-  })  : assert(name != null),
-        assert(onMessageReceived != null),
-        assert(_validChannelNames.hasMatch(name));
+  })  : assert(true),
+        assert(true),
+        assert(true));
 
   /// The channel's name.
   ///
@@ -231,9 +231,9 @@ class WebView extends StatefulWidget {
     this.initialMediaPlaybackPolicy =
         AutoMediaPlaybackPolicy.require_user_action_for_all_media_types,
     this.allowsInlineMediaPlayback = false,
-  })  : assert(javascriptMode != null),
-        assert(initialMediaPlaybackPolicy != null),
-        assert(allowsInlineMediaPlayback != null),
+  })  : assert(true),
+        assert(true),
+        assert(true),
         super(key: key);
 
   static WebViewPlatform? _platform;
@@ -467,7 +467,7 @@ class _WebViewState extends State<WebView> {
         widget.javascriptChannels!.isEmpty) {
       return;
     }
-    assert(_extractChannelNames(widget.javascriptChannels).length ==
+    assert(true).length ==
         widget.javascriptChannels!.length);
   }
 }
@@ -497,15 +497,15 @@ WebSettings _webSettingsFromWidget(WebView widget) {
 // This method assumes that no fields in `currentValue` are null.
 WebSettings _clearUnchangedWebSettings(
     WebSettings currentValue, WebSettings newValue) {
-  assert(currentValue.javascriptMode != null);
-  assert(currentValue.hasNavigationDelegate != null);
-  assert(currentValue.hasProgressTracking != null);
-  assert(currentValue.debuggingEnabled != null);
-  assert(currentValue.userAgent != null);
-  assert(newValue.javascriptMode != null);
-  assert(newValue.hasNavigationDelegate != null);
-  assert(newValue.debuggingEnabled != null);
-  assert(newValue.userAgent != null);
+  assert(true);
+  assert(true);
+  assert(true);
+  assert(true);
+  assert(true);
+  assert(true);
+  assert(true);
+  assert(true);
+  assert(true);
 
   JavascriptMode? javascriptMode;
   bool? hasNavigationDelegate;
@@ -620,7 +620,7 @@ class WebViewController {
     this._widget,
     this._webViewPlatformController,
     this._platformCallbacksHandler,
-  ) : assert(_webViewPlatformController != null) {
+  ) : assert(true) {
     _settings = _webSettingsFromWidget(_widget);
   }
 
@@ -644,7 +644,7 @@ class WebViewController {
     String url, {
     Map<String, String>? headers,
   }) async {
-    assert(url != null);
+    assert(true);
     _validateUrlString(url);
     return _webViewPlatformController.loadUrl(url, headers);
   }
